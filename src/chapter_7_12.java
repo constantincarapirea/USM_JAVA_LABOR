@@ -1,6 +1,6 @@
 import java.util.Scanner;
 public class chapter_7_12 {
-    public static boolean IsDublicates(int n, int[] a) {
+    public static boolean dublicate(int n, int[] a) {
         int dublicat = 0;
         for(int v : a) {
             if(n == v) dublicat++;
@@ -23,7 +23,7 @@ public class chapter_7_12 {
             System.out.print("Get a unique number between 10 - 100: ");
             n= input.nextInt();
             if ( n <= 100 && n >= 10) {
-                if (IsDublicates(n, a)) {
+                if (dublicate(n, a)) {
                     System.out.println("Input number is not unique, try again!");
                     continue;
                 }
