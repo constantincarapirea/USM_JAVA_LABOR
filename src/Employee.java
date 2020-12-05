@@ -1,33 +1,51 @@
 public class Employee {
-    private String first_name;
-    private  String last_name;
-    private String social_security_number;
+    private String firstName;
+    private String lastName;
+    private Date birthDate;
+    private Date hireDate;
+    private double salary;
 
-    public Employee(String first_name,String last_name,String   social_security_number ){
+    public Employee(String firstName, String lastName, Date birthDate, Date hireDate, double salary)
+    {
+        this.hireDate = hireDate;
+        setBirthDate(birthDate);
+        setFirstName(firstName);
+        setLastName(lastName);
+        setSalary(salary);
+    }
 
+    public String getFirstName()
+    {
+        return firstName;
+    }
+    public void setFirstName(String firstName)
+    {
+        this.firstName = firstName;
+    }
+    public String getLastName()
+    {
+        return lastName;
+    }
+    public void setLastName(String lastName){this.lastName = lastName; }
 
+    public Date getBirthDate() {
+        return birthDate;
     }
-    public String getSocial_security_number(){
-        return social_security_number;
-    }
-    public  void setSocial_security_number(String security_number){
-        social_security_number=security_number;
-    }
-    public String getLast_name(){
-        return last_name;
-    }
-    public void setLast_name(String last_name){
 
-        this.last_name=last_name;
+    public void setBirthDate(Date birthDate) {
+        this.birthDate = birthDate;
     }
-    public  String getFirst_name(){
-        return first_name;
+
+    public void setSalary(double salary) {
+        this.salary = salary;
     }
-    public void setFirst_name(String first_name){
-        this.first_name=first_name;
+
+    public double getSalary() {
+        return salary;
     }
+
     @Override
-    public  String toString(){
-        return  String.format("commision employee"+getFirst_name(),getFirst_name()+"social security number"+getSocial_security_number());
+    public String toString(){
+        return String.format( firstName, lastName+" |-> Hired: "+ hireDate+ "Birthday: "+birthDate+"Salary:" + salary);
     }
 }
